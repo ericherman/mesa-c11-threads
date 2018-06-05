@@ -1,0 +1,15 @@
+This repo was created with the following method:
+
+git clone git://anongit.freedesktop.org/git/mesa/mesa
+mkdir mesa-c11-threads.git
+cd mesa-c11-threads.git
+git init --bare
+cd ../mesa
+git subtree split --prefix=include/c11 -b split
+git push ../mesa-c11-threads.git split:master
+cd ..
+git clone mesa-c11-threads.git
+cd mesa-c11-threads
+wget https://www.boost.org/LICENSE_1_0.txt
+mv LICENSE_1_0.txt COPYING
+vim README
